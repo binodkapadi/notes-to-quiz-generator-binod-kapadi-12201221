@@ -12,7 +12,7 @@ Manually creating quizzes from notes is time-consuming, making it hard to practi
 
 
 ## Solution Summary
-We built Notes to Quiz Generator, an AI web app that converts notes or text into interactive quizzes automatically.
+I built Notes to Quiz Generator, an AI web app that converts notes or text into interactive quizzes automatically.
 Users can paste notes or upload text files, and the backend uses FastAPI + Llama 3 / GPT API to generate MCQs, True/False, and short-answer questions with correct answers.
 
 
