@@ -79,6 +79,8 @@ QUIZGENERATOR
 
 ## Demo Video
 
+https://www.youtube.com/watch?v=JIGYz4sM7ZI&t=3s
+
 
 ## Features
 - Converts text notes into interactive quizzes automatically.
