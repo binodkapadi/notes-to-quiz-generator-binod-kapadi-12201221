@@ -17,11 +17,11 @@ Users can paste their notes, choose a quiz difficulty level, and instantly gener
 
 
 ## Tech Stack
-Backend: Python, Streamlit
-Frontend: Streamlit Components, Custom CSS
-AI / LLM Models: Google Gemini 2.0 Flash (google-generativeai SDK)
-Deployment / Hosting: Streamlit Cloud , Render , Google Cloud Run
-Version Control: Git and GitHub
+ - Backend: Python, Streamlit
+ - Frontend: Streamlit Components, Custom CSS
+ - AI / LLM Models: Google Gemini 2.0 Flash (google-generativeai SDK)
+ - Deployment / Hosting: Streamlit Cloud , Render , Google Cloud Run
+ - Version Control: Git and GitHub
 
 ## Project Structure
 QUIZGENERATOR/
