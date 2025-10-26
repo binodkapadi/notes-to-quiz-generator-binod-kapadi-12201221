@@ -24,15 +24,16 @@ Users can paste their notes, choose a quiz difficulty level, and instantly gener
  - Version Control: Git and GitHub
 
 ## Project Structure
-QUIZGENERATOR/
-│
-├── mainapp.py             # Main Streamlit application
-├── style.css              # Custom UI styling (Dark Mode)
-├── .env                   # Environment variables (contains GEMINI_API_KEY)
-├── requirements.txt       # Project dependencies
-├── README.md              # Project documentation
-├── .gitignore             # For hiding api key ( or other sensitive information)
-└── venv/                  # Virtual environment directory 
+QUIZGENERATOR
+
+  - mainapp.py             # Main Streamlit application
+  - style.css              # Custom UI styling (Dark Mode)
+  - .env                   # Environment variables (contains GEMINI_API_KEY)
+  - requirements.txt       # Project dependencies
+  - README.md              # Project documentation
+  - .gitignore             # For hiding api key ( or other sensitive information)
+  -  venv/                  # Virtual environment directory 
+
 
 
 ## Setup Instructions (with Python)
