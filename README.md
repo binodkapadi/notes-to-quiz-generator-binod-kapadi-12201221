@@ -90,42 +90,20 @@ QUIZGENERATOR/
 The system allows users to paste notes or text, sends the content to the Google Gemini API, and automatically generates multiple-choice quiz questions (MCQs) that are displayed interactively in the Streamlit interface.
 
    - ASCII Architecture Diagram
-          ┌──────────────────────────────┐
-          │      🖥️  Frontend (UI)       │
-          │      Built with Streamlit     │
-          └──────────────┬───────────────┘
-                         │
-                         ▼
-              User pastes text or notes
-                         │
-                         ▼
-          ┌──────────────────────────────┐
-          │   ⚙️  Backend (Python App)    │
-          │ Uses Streamlit + Google GenAI │
-          │ Handles logic & formatting     │
-          └──────────────┬───────────────┘
-                         │
-                         ▼
-          ┌──────────────────────────────┐
-          │ 🤖  Google Gemini Model (API) │
-          │  Analyzes the notes and       │
-          │  generates 6 MCQ questions     │
-          │  in JSON format                │
-          └──────────────┬───────────────┘
-                         │
-                         ▼
-          ┌──────────────────────────────┐
-          │   📤 Backend processes JSON   │
-          │   Parses questions, options,  │
-          │   and correct answers         │
-          └──────────────┬───────────────┘
-                         │
-                         ▼
-          ┌──────────────────────────────┐
-          │   🧾 Frontend displays quiz   │
-          │   with radio buttons for each │
-          │   question and interactive UI │
-          └──────────────────────────────┘
+       Frontend (Streamlit UI)
+               ↓
+       User pastes notes or text
+               ↓
+      Backend (Python + Google GenAI)
+               ↓
+      Google Gemini API
+               ↓
+      Generates MCQs in JSON format
+               ↓
+      Backend processes questions
+               ↓
+     Frontend displays interactive quiz
+
 
 
 ## References
@@ -139,5 +117,5 @@ This project is licensed under the MIT License.
 
 
 ## Acknowledgements
-Developed by Binod Kapadi (12201221)
-Special thanks to Google Gemini for powering AI question generation.
+ - Developed by Binod Kapadi (12201221)
+ - Special thanks to Google Gemini for powering AI question generation.
