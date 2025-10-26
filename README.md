@@ -12,25 +12,69 @@ Manually creating quizzes from notes is time-consuming, making it hard to practi
 
 
 ## Solution Summary
-I built Notes to Quiz Generator, an AI web app that converts notes or text into interactive quizzes automatically.
-Users can paste notes or upload text files, and the backend uses FastAPI + Llama 3 / GPT API to generate MCQs, True/False, and short-answer questions with correct answers.
+The Notes-to-Quiz Generator is an AI-driven web application that transforms written notes into interactive quizzes for effective self-assessment.
+Users can paste their notes, choose a quiz difficulty level, and instantly generate AI-created questions with correct answers.
 
 
 ## Tech Stack
-Backend: Python, FastAPI
-Frontend: React.js / HTML + CSS
-AI / LLM Models: OpenAI GPT-4 / Llama 3
-Database: SQLite / MongoDB 
-Deployment / Hosting: Vercel (frontend), Render (backend)
-Version Control: Git + GitHub
+Backend: Python, Streamlit
+Frontend: Streamlit Components, Custom CSS
+AI / LLM Models: Google Gemini 2.0 Flash (google-generativeai SDK)
+Deployment / Hosting: Streamlit Cloud , Render , Google Cloud Run
+Version Control: Git and GitHub
 
 ## Project Structure
+QUIZGENERATOR/
+│
+├── mainapp.py                 # Main Streamlit application
+├── style.css              # Custom UI styling (Dark Mode)
+├── .env                   # Environment variables (contains GEMINI_API_KEY)
+├── requirements.txt       # Project dependencies
+├── README.md              # Project documentation
+├── .gitignore             # For hiding api key ( or other sensitive information)
+└── venv/                  # Virtual environment directory 
 
+
+## Setup Instructions (with Python)
+
+1. Create and Activate a Virtual Environment
+     python -m venv venv
+     venv\Scripts\activate
+
+2. Install Dependencies
+     pip install -r requirements.txt
+
+3. Set Up Environment Variables
+     GEMINI_API_KEY=your_google_gemini_api_key_here
+   
+4. Run the Streamlit App
+    streamlit run mainapp.py
+
+   By default, the app runs on:
+        http://localhost:8501
+   
+5. Generate a Quiz
+    - Paste any text or notes into the textarea
+    - Select quiz difficulty level (Easy / Medium / Hard)
+    - Click “🚀 Generate Quiz”
+    - Attempt questions and click “Submit” to view your score
+  
+6. To stop the Streamlit App
+        ctrl + c
+
+7. Deactivate the Virtual Environment (After Use)
+        deactivate
 
 
 ## Deployment
+   -Activate the virtual environment
+        venv\Scripts\activate
+   
+   - Run the Streamlit App
+         streamlit run mainapp.py
 
-
+   By default, the app runs on:
+        http://localhost:8501
 
 ## Demo Video
 
@@ -43,16 +87,51 @@ Version Control: Git + GitHub
 
 
 ## Technical Architecture
-The system takes user notes as input, sends them to an AI model for question generation, and displays the quiz results in the frontend.
+The system allows users to paste notes or text, sends the content to the Google Gemini API, and automatically generates multiple-choice quiz questions (MCQs) that are displayed interactively in the Streamlit interface.
 
-Flow Steps:
-   - User pastes notes → Frontend sends to backend
-   - Backend processes input → Sends to AI model
-   - AI model generates questions → Backend returns results
-   - Frontend renders interactive quiz
+   - ASCII Architecture Diagram
+          ┌──────────────────────────────┐
+          │      🖥️  Frontend (UI)       │
+          │      Built with Streamlit     │
+          └──────────────┬───────────────┘
+                         │
+                         ▼
+              User pastes text or notes
+                         │
+                         ▼
+          ┌──────────────────────────────┐
+          │   ⚙️  Backend (Python App)    │
+          │ Uses Streamlit + Google GenAI │
+          │ Handles logic & formatting     │
+          └──────────────┬───────────────┘
+                         │
+                         ▼
+          ┌──────────────────────────────┐
+          │ 🤖  Google Gemini Model (API) │
+          │  Analyzes the notes and       │
+          │  generates 6 MCQ questions     │
+          │  in JSON format                │
+          └──────────────┬───────────────┘
+                         │
+                         ▼
+          ┌──────────────────────────────┐
+          │   📤 Backend processes JSON   │
+          │   Parses questions, options,  │
+          │   and correct answers         │
+          └──────────────┬───────────────┘
+                         │
+                         ▼
+          ┌──────────────────────────────┐
+          │   🧾 Frontend displays quiz   │
+          │   with radio buttons for each │
+          │   question and interactive UI │
+          └──────────────────────────────┘
 
 
 ## References
+Streamlit Documentation
+Google Generative AI SDK
+python-dotenv
 
 
 ## License
@@ -60,5 +139,5 @@ This project is licensed under the MIT License.
 
 
 ## Acknowledgements
-
-
+Developed by Binod Kapadi (12201221)
+Special thanks to Google Gemini for powering AI question generation.
