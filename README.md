@@ -26,7 +26,7 @@ Version Control: Git and GitHub
 ## Project Structure
 QUIZGENERATOR/
 │
-├── mainapp.py                 # Main Streamlit application
+├── mainapp.py             # Main Streamlit application
 ├── style.css              # Custom UI styling (Dark Mode)
 ├── .env                   # Environment variables (contains GEMINI_API_KEY)
 ├── requirements.txt       # Project dependencies
