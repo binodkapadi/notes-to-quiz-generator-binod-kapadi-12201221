@@ -89,21 +89,9 @@ QUIZGENERATOR/
 ## Technical Architecture
 The system allows users to paste notes or text, sends the content to the Google Gemini API, and automatically generates multiple-choice quiz questions (MCQs) that are displayed interactively in the Streamlit interface.
 
-   - ASCII Architecture Diagram
-       Frontend (Streamlit UI)
-               ↓
-       User pastes notes or text
-               ↓
-      Backend (Python + Google GenAI)
-               ↓
-      Google Gemini API
-               ↓
-      Generates MCQs in JSON format
-               ↓
-      Backend processes questions
-               ↓
-     Frontend displays interactive quiz
-
+   - ASCII Architecture Diagram:
+     
+       Frontend (Streamlit UI) ->  User pastes notes or text ->  Backend (Python + Google GenAI) -> Google Gemini API -> Generates MCQs in JSON format -> Backend processes questions -> Frontend displays interactive quiz
 
 
 ## References
